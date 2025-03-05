@@ -19,7 +19,7 @@
 ```bash
 npm install -D lockfile-sync-check
 # 或
-yarn global -D lockfile-sync-check
+yarn add -D lockfile-sync-check
 # 或
 pnpm add -D lockfile-sync-check
 ```
