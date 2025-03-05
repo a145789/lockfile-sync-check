@@ -1,7 +1,7 @@
 {
   "name": "lockfile-sync-check",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "A command-line tool to check if your package manager's lockfile is in sync with the latest changes in your Git repository",
   "type": "module",
   "main": "dist/index.js",
   "module": "./dist/index.js",
@@ -12,9 +12,7 @@
       "import": "./dist/index.js"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "bin": {
     "lockfile-sync-check": "./dist/cli.js"
   },
@@ -29,15 +27,8 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage"
   },
-  "keywords": [
-    "pnpm",
-    "yarn",
-    "npm",
-    "git",
-    "lockfile",
-    "sync"
-  ],
-  "author": "",
+  "keywords": ["pnpm", "yarn", "npm", "git", "lockfile", "sync"],
+  "author": "clencat <2091927351@qq.com>",
   "license": "MIT",
   "packageManager": "pnpm@10.4.1",
   "devDependencies": {
