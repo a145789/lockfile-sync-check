@@ -12,23 +12,20 @@
       "import": "./dist/index.js"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
+  "bin": {
+    "lockfile-sync-check": "./dist/cli.js"
+  },
   "scripts": {
-    "build": "tsc",
+    "dev": "bun run ./src/cli.ts",
+    "dev:watch": "tsup --watch",
+    "build": "tsup",
     "lint": "biome check src",
     "format": "biome format --write src",
+    "release": "pnpm run build && vr release",
     "prepare": "pnpm build"
   },
-  "keywords": [
-    "pnpm",
-    "yarn",
-    "npm",
-    "git",
-    "lockfile",
-    "sync"
-  ],
+  "keywords": ["pnpm", "yarn", "npm", "git", "lockfile", "sync"],
   "author": "",
   "license": "MIT",
   "packageManager": "pnpm@10.4.1",
@@ -36,6 +33,7 @@
     "@biomejs/biome": "^1.9.4",
     "@types/node": "^22.13.9",
     "@varlet/release": "^0.3.3",
+    "tsup": "^8.4.0",
     "typescript": "^5.8.2"
   }
 }
