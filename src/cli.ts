@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import {
-  checkLockfileSync,
   type PackageManager,
+  checkLockfileSync,
   detectPackageManager,
 } from "./index.js"
 import { installDependencies } from "./install.js"
