@@ -1,0 +1,41 @@
+{
+  "name": "lockfile-sync-check",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "biome check src",
+    "format": "biome format --write src",
+    "prepare": "pnpm build"
+  },
+  "keywords": [
+    "pnpm",
+    "yarn",
+    "npm",
+    "git",
+    "lockfile",
+    "sync"
+  ],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.4.1",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.13.9",
+    "@varlet/release": "^0.3.3",
+    "typescript": "^5.8.2"
+  }
+}
