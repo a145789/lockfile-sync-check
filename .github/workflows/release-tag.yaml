@@ -3,7 +3,7 @@ name: Create Release Tag
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
   release-tag:
@@ -20,5 +20,5 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           body: |
-            更新内容请查看[CHANGELOG](https://github.com/a145789/version-mark/blob/main/CHANGELOG.md)。
-            Please refer to [CHANGELOG](https://github.com/a145789/version-mark/blob/main/CHANGELOG.md) for details.
+            更新内容请查看[CHANGELOG](https://github.com/a145789/lockfile-sync-check/blob/main/README.zh-CN.md)。
+            Please refer to [CHANGELOG](https://github.com/a145789/lockfile-sync-check/blob/main/CHANGELOG.md) for details.

@@ -1,13 +1,18 @@
 # lockfile-sync-check
 
-一个命令行工具，用于检查你的包管理器的锁文件是否与Git仓库中的最新更改同步。
+一个命令行工具，用于检查你的包管理器的锁文件是否与 Git 仓库中的最新更改同步。
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/lockfile-sync-check" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/npm/v/lockfile-sync-check" alt="NPM Version" /></a>
+  <a href="https://github.com/a145789/lockfile-sync-check/blob/master/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/github/license/a145789/lockfile-sync-check" alt="License" /></a>
+</p>
 
 ## 特性
 
 - 支持多种包管理器（npm、yarn、pnpm）
 - 自动检测你使用的包管理器
 - 可选的自动依赖安装
-- 易于与Git钩子集成
+- 易于与 Git 钩子集成
 
 ## 安装
 
@@ -43,9 +48,9 @@ lockfile-sync-check pnpm
 lockfile-sync-check --install
 ```
 
-## Git钩子集成
+## Git 钩子集成
 
-你可以使用以下两种流行的Git钩子管理工具来集成lockfile-sync-check：
+你可以使用以下两种流行的 Git 钩子管理工具来集成 lockfile-sync-check：
 
 ### 使用 simple-git-hooks
 
@@ -82,20 +87,20 @@ yarn add -D husky
 pnpm add -D husky
 ```
 
-2. 启用Git钩子：
+2. 启用 Git 钩子：
 
 ```bash
 npx husky install
 ```
 
-3. 添加post-merge钩子：
+3. 添加 post-merge 钩子：
 
 ```bash
 npx husky add .husky/post-merge "lockfile-sync-check --install"
 npx husky add .husky/post-rewrite "lockfile-sync-check --install"
 ```
 
-4. 在 `package.json` 中添加prepare脚本：
+4. 在 `package.json` 中添加 prepare 脚本：
 
 ```json
 {
@@ -105,4 +110,4 @@ npx husky add .husky/post-rewrite "lockfile-sync-check --install"
 }
 ```
 
-这样，每当你执行git pull、git merge或git rebase操作时，lockfile-sync-check都会自动运行并确保你的依赖是最新的。
+这样，每当你执行 git pull、git merge 或 git rebase 操作时，lockfile-sync-check 都会自动运行并确保你的依赖是最新的。

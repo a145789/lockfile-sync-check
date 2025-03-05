@@ -1,5 +1,12 @@
 # lockfile-sync-check
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/lockfile-sync-check" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/npm/v/lockfile-sync-check" alt="NPM Version" /></a>
+  <a href="https://github.com/a145789/lockfile-sync-check/blob/master/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/github/license/a145789/lockfile-sync-check" alt="License" /></a>
+</p>
+
+[中文文档](https://github.com/a145789/lockfile-sync-check/blob/master/README.zh-CN.md)
+
 A command-line tool to check if your package manager's lockfile is in sync with the latest changes in your Git repository.
 
 ## Features
@@ -48,6 +55,7 @@ lockfile-sync-check --install
 ### Using simple-git-hooks
 
 1. Install simple-git-hooks:
+
 ```bash
 npm install -D simple-git-hooks
 # or
@@ -57,6 +65,7 @@ pnpm add -D simple-git-hooks
 ```
 
 2. Add configuration to your package.json:
+
 ```json
 {
   "simple-git-hooks": {
@@ -67,6 +76,7 @@ pnpm add -D simple-git-hooks
 ```
 
 3. Initialize git hooks:
+
 ```bash
 npx simple-git-hooks
 ```
@@ -74,6 +84,7 @@ npx simple-git-hooks
 ### Using Husky
 
 1. Install Husky:
+
 ```bash
 npm install -D husky
 # or
@@ -83,11 +94,13 @@ pnpm add -D husky
 ```
 
 2. Initialize Husky:
+
 ```bash
 npx husky install
 ```
 
 3. Add hooks:
+
 ```bash
 npx husky add .husky/post-merge "lockfile-sync-check --install"
 npx husky add .husky/post-rewrite "lockfile-sync-check --install"
