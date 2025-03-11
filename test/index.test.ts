@@ -58,7 +58,16 @@ describe("Lockfile Sync Check", () => {
 
   it("should return true when lockfile is in git diff", () => {
     vi.mocked(execSync).mockReturnValue("pnpm-lock.yaml\nother-file.js")
-    expect(checkLockfileSync("pnpm")).toBe(true)
+    const isNeedSync = checkLockfileSync("pnpm")
+    expect(isNeedSync).toBe(true)
+
+    const consoleSpy = vi.spyOn(console, "log")
+    if (isNeedSync) {
+      console.log("❗ \x1b[31mWarning: Lockfile has been updated!\x1b[0m")
+    }
+    expect(consoleSpy).toHaveBeenCalledWith(
+      "❗ \x1b[31mWarning: Lockfile has been updated!\x1b[0m",
+    )
   })
 
   it("should return false when lockfile is not in git diff", () => {

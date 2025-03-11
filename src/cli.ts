@@ -14,7 +14,7 @@ const shouldInstall = args.includes("--install")
 
 const isNeedSync = checkLockfileSync(packageManager)
 
-if (!isNeedSync) {
+if (isNeedSync) {
   console.log("❗ \x1b[31mWarning: Lockfile has been updated!\x1b[0m")
   if (shouldInstall) {
     installDependencies(packageManager)
