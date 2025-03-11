@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
 import { execSync } from "node:child_process"
-import { installDependencies } from "../src/install"
+import { installDependencies, installStartMessage, installSuccessMessage, installErrorMessage } from "../src/install"
 
 vi.mock("node:child_process")
 
@@ -24,10 +24,10 @@ describe("Install Dependencies", () => {
 
     expect(mockExecSync).toHaveBeenCalledWith("npm install", expect.any(Object))
     expect(mockConsoleLog).toHaveBeenCalledWith(
-      "📦 \x1b[33mInstalling dependencies...\x1b[0m",
+      installStartMessage,
     )
     expect(mockConsoleLog).toHaveBeenCalledWith(
-      "✨ \x1b[32mDependencies installed successfully\x1b[0m",
+      installSuccessMessage,
     )
     expect(mockExit).toHaveBeenCalledWith(0)
 
@@ -46,10 +46,10 @@ describe("Install Dependencies", () => {
 
     expect(mockExecSync).toHaveBeenCalledWith("yarn", expect.any(Object))
     expect(mockConsoleLog).toHaveBeenCalledWith(
-      "📦 \x1b[33mInstalling dependencies...\x1b[0m",
+      installStartMessage,
     )
     expect(mockConsoleLog).toHaveBeenCalledWith(
-      "✨ \x1b[32mDependencies installed successfully\x1b[0m",
+      installSuccessMessage,
     )
     expect(mockExit).toHaveBeenCalledWith(0)
 
@@ -71,10 +71,10 @@ describe("Install Dependencies", () => {
       expect.any(Object),
     )
     expect(mockConsoleLog).toHaveBeenCalledWith(
-      "📦 \x1b[33mInstalling dependencies...\x1b[0m",
+      installStartMessage,
     )
     expect(mockConsoleLog).toHaveBeenCalledWith(
-      "✨ \x1b[32mDependencies installed successfully\x1b[0m",
+      installSuccessMessage,
     )
     expect(mockExit).toHaveBeenCalledWith(0)
 
@@ -96,7 +96,7 @@ describe("Install Dependencies", () => {
     installDependencies("npm")
 
     expect(mockConsoleError).toHaveBeenCalledWith(
-      "❌ \x1b[31mFailed to install dependencies:\x1b[0m",
+      installErrorMessage,
       expect.any(Error),
     )
     expect(mockExit).toHaveBeenCalledWith(1)

@@ -6,6 +6,7 @@ import {
   getLockfilePath,
   checkLockfileSync,
 } from "../src/index.ts"
+import { syncMessage } from "../src/cli.ts"
 
 vi.mock("node:fs")
 vi.mock("node:child_process")
@@ -63,11 +64,9 @@ describe("Lockfile Sync Check", () => {
 
     const consoleSpy = vi.spyOn(console, "log")
     if (isNeedSync) {
-      console.log("❗ \x1b[31mWarning: Lockfile has been updated!\x1b[0m")
+      console.log(syncMessage)
     }
-    expect(consoleSpy).toHaveBeenCalledWith(
-      "❗ \x1b[31mWarning: Lockfile has been updated!\x1b[0m",
-    )
+    expect(consoleSpy).toHaveBeenCalledWith(syncMessage)
   })
 
   it("should return false when lockfile is not in git diff", () => {
@@ -79,22 +78,18 @@ describe("Lockfile Sync Check", () => {
     vi.mocked(execSync).mockImplementation(() => {
       throw new Error("Git command failed")
     })
-    const mockExit = vi
-      .spyOn(process, "exit")
-      .mockImplementation(() => undefined as never)
+    
     const mockConsoleError = vi
-      .spyOn(console, "error")
+      .spyOn(console, "log")
       .mockImplementation(() => {})
 
-    checkLockfileSync("pnpm")
+    
+    expect(checkLockfileSync("pnpm")).toBe(false)
 
     expect(mockConsoleError).toHaveBeenCalledWith(
-      "Error checking lockfile:",
-      expect.any(Error),
+      "Error checking lockfile, please check manually."
     )
-    expect(mockExit).toHaveBeenCalledWith(1)
 
-    mockExit.mockRestore()
     mockConsoleError.mockRestore()
   })
 })

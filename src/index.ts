@@ -30,8 +30,8 @@ export function checkLockfileSync(
       encoding: "utf-8",
     })
     return diffOutput.includes(lockfile)
-  } catch (error) {
-    console.error("Error checking lockfile:", error)
-    process.exit(1)
+  } catch {
+    console.log("Error checking lockfile, please check manually.")
+    return false
   }
 }
