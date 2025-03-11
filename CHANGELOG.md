@@ -1,4 +1,13 @@
-## 0.0.1 (2025-03-05)
+## [0.0.2](https://github.com/a145789/lockfile-sync-check/compare/v0.0.1...v0.0.2) (2025-03-11)
+
+
+### Bug Fixes
+
+* **cli:** correct lockfile sync check condition and update tests ([01d880a](https://github.com/a145789/lockfile-sync-check/commit/01d880ac8786c221224eb0974638463dbd4a09c6))
+
+
+
+## [0.0.1](https://github.com/a145789/lockfile-sync-check/compare/2ba56e185c6c72760fa41e049b5a72e1981c997b...v0.0.1) (2025-03-05)
 
 
 ### Bug Fixes
