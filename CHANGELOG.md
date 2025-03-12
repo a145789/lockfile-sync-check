@@ -1,3 +1,12 @@
+## [0.0.5](https://github.com/a145789/lockfile-sync-check/compare/v0.0.4...v0.0.5) (2025-03-12)
+
+
+### Bug Fixes
+
+* get argv logic ([c000943](https://github.com/a145789/lockfile-sync-check/commit/c00094372ebf3afd355fdf048be0f10341627d8a))
+
+
+
 ## [0.0.4](https://github.com/a145789/lockfile-sync-check/compare/v0.0.3...v0.0.4) (2025-03-12)
 
 

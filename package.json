@@ -1,6 +1,6 @@
 {
   "name": "lockfile-sync-check",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A command-line tool to check if your package manager's lockfile is in sync with the latest changes in your Git repository",
   "type": "module",
   "main": "dist/index.js",
