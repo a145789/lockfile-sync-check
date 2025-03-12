@@ -1,3 +1,12 @@
+## [0.0.4](https://github.com/a145789/lockfile-sync-check/compare/v0.0.3...v0.0.4) (2025-03-12)
+
+
+### Features
+
+* add pnpm as default package manager ([28c57ef](https://github.com/a145789/lockfile-sync-check/commit/28c57effac4e233e8c917999b1ee1baa65f55e5d))
+
+
+
 ## [0.0.3](https://github.com/a145789/lockfile-sync-check/compare/v0.0.2...v0.0.3) (2025-03-11)
 
 
