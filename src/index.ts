@@ -2,9 +2,7 @@ import { execSync } from "node:child_process"
 
 export type PackageManager = "npm" | "yarn" | "pnpm"
 
-export function getLockfilePath(
-  packageManager: PackageManager,
-): string {
+export function getLockfilePath(packageManager: PackageManager): string {
   switch (packageManager) {
     case "pnpm":
       return "pnpm-lock.yaml"
@@ -15,9 +13,7 @@ export function getLockfilePath(
   }
 }
 
-export function checkLockfileSync(
-  packageManager: PackageManager,
-): boolean {
+export function checkLockfileSync(packageManager: PackageManager): boolean {
   const lockfile = getLockfilePath(packageManager)
 
   try {
