@@ -12,7 +12,6 @@ A command-line tool to check if your package manager's lockfile is in sync with 
 ## Features
 
 - Supports multiple package managers (npm, yarn, pnpm)
-- Automatically detects your package manager
 - Optional automatic dependency installation
 - Easy integration with Git hooks
 

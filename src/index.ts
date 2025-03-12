@@ -1,15 +1,10 @@
 import { execSync } from "node:child_process"
-import { existsSync } from "node:fs"
 
 export type PackageManager = "npm" | "yarn" | "pnpm"
 
-export function detectPackageManager(): PackageManager {
-  if (existsSync("yarn.lock")) return "yarn"
-  if (existsSync("package-lock.json")) return "npm"
-  return "pnpm"
-}
-
-export function getLockfilePath(packageManager: PackageManager): string {
+export function getLockfilePath(
+  packageManager: PackageManager,
+): string {
   switch (packageManager) {
     case "pnpm":
       return "pnpm-lock.yaml"
@@ -21,7 +16,7 @@ export function getLockfilePath(packageManager: PackageManager): string {
 }
 
 export function checkLockfileSync(
-  packageManager: PackageManager = detectPackageManager(),
+  packageManager: PackageManager,
 ): boolean {
   const lockfile = getLockfilePath(packageManager)
 
