@@ -1,3 +1,12 @@
+## [0.0.6](https://github.com/a145789/lockfile-sync-check/compare/v0.0.5...v0.0.6) (2025-03-19)
+
+
+### Features
+
+* **cli:** suppress update message when using install flag ([8b150ca](https://github.com/a145789/lockfile-sync-check/commit/8b150caf69bc7ac41f73a03712fb48bf2da5f146))
+
+
+
 ## [0.0.5](https://github.com/a145789/lockfile-sync-check/compare/v0.0.4...v0.0.5) (2025-03-12)
 
 
