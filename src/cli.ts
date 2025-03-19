@@ -5,17 +5,21 @@ import { installDependencies } from "./install"
 
 export const syncMessage = "\x1b[35mLockfile has been updated!\x1b[0m"
 
-const args = process.argv.slice(2)
-const packageManager =
-  (args.filter((arg) => arg !== "--install")[0] as PackageManager) || "pnpm"
+export function init() {
+  const args = process.argv.slice(2)
+  const pkgManager = (args.find((arg) => arg !== "--install") ||
+    "pnpm") as PackageManager
 
-const shouldInstall = args.includes("--install")
+  const installFlag = args.includes("--install")
+  const needSync = checkLockfileSync(pkgManager)
+  if (needSync) {
+    if (installFlag) {
+      installDependencies(pkgManager)
+      return
+    }
 
-const isNeedSync = checkLockfileSync(packageManager)
-
-if (isNeedSync) {
-  console.log(syncMessage)
-  if (shouldInstall) {
-    installDependencies(packageManager)
+    console.log(syncMessage)
   }
 }
+
+init()

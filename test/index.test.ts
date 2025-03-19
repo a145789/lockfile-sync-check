@@ -1,11 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest"
-import { existsSync } from "node:fs"
 import { execSync } from "node:child_process"
-import {
-  getLockfilePath,
-  checkLockfileSync,
-} from "../src/index.ts"
-import { syncMessage } from "../src/cli.ts"
+import { getLockfilePath, checkLockfileSync } from "../src/index.ts"
 
 vi.mock("node:fs")
 vi.mock("node:child_process")
@@ -37,12 +32,6 @@ describe("Lockfile Sync Check", () => {
     vi.mocked(execSync).mockReturnValue("pnpm-lock.yaml\nother-file.js")
     const isNeedSync = checkLockfileSync("pnpm")
     expect(isNeedSync).toBe(true)
-
-    const consoleSpy = vi.spyOn(console, "log")
-    if (isNeedSync) {
-      console.log(syncMessage)
-    }
-    expect(consoleSpy).toHaveBeenCalledWith(syncMessage)
   })
 
   it("should return false when lockfile is not in git diff", () => {
@@ -54,16 +43,15 @@ describe("Lockfile Sync Check", () => {
     vi.mocked(execSync).mockImplementation(() => {
       throw new Error("Git command failed")
     })
-    
+
     const mockConsoleError = vi
       .spyOn(console, "log")
       .mockImplementation(() => {})
 
-    
     expect(checkLockfileSync("pnpm")).toBe(false)
 
     expect(mockConsoleError).toHaveBeenCalledWith(
-      "Error checking lockfile, please check manually."
+      "Error checking lockfile, please check manually.",
     )
 
     mockConsoleError.mockRestore()
