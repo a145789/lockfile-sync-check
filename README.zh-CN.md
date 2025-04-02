@@ -3,8 +3,8 @@
 一个命令行工具，用于检查你的包管理器的锁文件是否与 Git 仓库中的最新更改同步。
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/lockfile-sync-check" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/npm/v/lockfile-sync-check" alt="NPM Version" /></a>
-  <a href="https://github.com/a145789/lockfile-sync-check/blob/master/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/github/license/a145789/lockfile-sync-check" alt="License" /></a>
+  <a href="https://www.npmjs.com/package/lockfile-sync-check" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/npm/v/lockfile-sync-check" alt="NPM Version" /></a>
+  <a href="https://github.com/a145789/lockfile-sync-check/blob/main/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/license/a145789/lockfile-sync-check" alt="License" /></a>
 </p>
 
 ## 特性
