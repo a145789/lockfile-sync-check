@@ -37,14 +37,14 @@ lockfile-sync-check [包管理器] [--install]
 ### 示例
 
 ```bash
-# 使用自动检测的包管理器检查锁文件是否同步
+# 检查锁文件是否同步, 不指定包管理器，默认使用 pnpm
 lockfile-sync-check
 
 # 使用指定的包管理器检查
-lockfile-sync-check pnpm
+lockfile-sync-check npm
 
 # 检查并在不同步时自动安装
-lockfile-sync-check --install
+lockfile-sync-check npm --install
 ```
 
 ## Git 钩子集成

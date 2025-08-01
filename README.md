@@ -39,14 +39,14 @@ lockfile-sync-check [package-manager] [--install]
 ### Example
 
 ```bash
-# Check if lockfile is in sync using auto-detected package manager
+# Check if lockfile is in sync, using default package manager (pnpm)
 lockfile-sync-check
 
 # Check using specific package manager
-lockfile-sync-check pnpm
+lockfile-sync-check npm
 
 # Check and auto-install if out of sync
-lockfile-sync-check --install
+lockfile-sync-check npm --install
 ```
 
 ## Git Hook Integration
