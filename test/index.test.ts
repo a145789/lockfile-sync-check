@@ -44,15 +44,11 @@ describe("Lockfile Sync Check", () => {
       throw new Error("Git command failed")
     })
 
-    const mockConsoleError = vi
-      .spyOn(console, "log")
-      .mockImplementation(() => {})
+    const mockConsoleError = vi.spyOn(console, "log").mockImplementation(() => {})
 
     expect(checkLockfileSync("pnpm")).toBe(false)
 
-    expect(mockConsoleError).toHaveBeenCalledWith(
-      "Error checking lockfile, please check manually.",
-    )
+    expect(mockConsoleError).toHaveBeenCalledWith("Error checking lockfile, please check manually.")
 
     mockConsoleError.mockRestore()
   })

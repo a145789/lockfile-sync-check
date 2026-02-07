@@ -2,18 +2,12 @@ import { execSync } from "node:child_process"
 import type { PackageManager } from "./index.js"
 
 export const installStartMessage = "📦 Installing dependencies..."
-export const installSuccessMessage =
-  "✨ \x1b[32mDependencies installed successfully\x1b[0m"
-export const installErrorMessage =
-  "❌ \x1b[31mFailed to install dependencies:\x1b[0m"
+export const installSuccessMessage = "✨ \x1b[32mDependencies installed successfully\x1b[0m"
+export const installErrorMessage = "❌ \x1b[31mFailed to install dependencies:\x1b[0m"
 
 export function installDependencies(packageManager: PackageManager): void {
   const installCommand =
-    packageManager === "npm"
-      ? "npm install"
-      : packageManager === "yarn"
-        ? "yarn"
-        : "pnpm install"
+    packageManager === "npm" ? "npm install" : packageManager === "yarn" ? "yarn" : "pnpm install"
 
   try {
     console.log(installStartMessage)

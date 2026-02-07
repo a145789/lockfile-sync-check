@@ -9,20 +9,11 @@
     "resolveJsonModule": true,
     "isolatedDeclarations": true,
     "jsx": "preserve",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
     "outDir": "./dist"
   },
-  "include": [
-    "src/**/*",
-    "../test"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src/**/*", "../test"],
+  "exclude": ["node_modules", "dist"]
 }

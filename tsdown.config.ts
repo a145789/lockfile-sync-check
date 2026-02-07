@@ -6,4 +6,6 @@ export default defineConfig({
   format: ["esm"],
   dts: true,
   outDir: "dist",
+  unbundle: true,
+  fixedExtension: false,
 })
