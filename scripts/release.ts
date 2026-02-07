@@ -1,9 +1,13 @@
 import { $ } from "bun"
 import { release } from "@varlet/release"
 
-release({
-  checkRemoteVersion: true,
-  task: async () => {
-    await $`npx oxfmt package.json`
-  },
-})
+try {
+  await release({
+    checkRemoteVersion: true,
+    task: async () => {
+      await $`npx oxfmt package.json`
+    },
+  })
+} catch (error) {
+  console.log(error)
+}
