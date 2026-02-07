@@ -38,7 +38,7 @@
     "build": "tsdown",
     "lint": "oxlint --type-aware --type-check && oxfmt --check",
     "format": "oxlint --fix && oxfmt",
-    "release": "pnpm run build && vr release",
+    "release": "pnpm run build && bun run ./scripts/release.ts",
     "prepare": "pnpm build",
     "test": "vitest",
     "test:coverage": "vitest run --coverage"
